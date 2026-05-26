@@ -32,9 +32,9 @@
         <a href="fun-stuff.html" class="bg-blue-500 text-white rounded-full px-4 py-1.5 text-sm font-medium">Fun Stuff</a>
       </div>
       <div class="flex items-center gap-4 text-xl">
-        <button id="dark-toggle" class="text-gray-700 dark:text-gray-300 cursor-pointer bg-transparent border-none">
-          <i class="fa-solid fa-sun dark:hidden"></i>
-          <i class="fa-solid fa-moon hidden dark:inline"></i>
+        <button id="dark-toggle" class="relative h-[1em] w-[1em] text-gray-700 dark:text-gray-300 cursor-pointer bg-transparent border-none">
+          <i class="fa-solid fa-sun absolute top-0 left-0 opacity-100 dark:opacity-0 transition-opacity duration-300"></i>
+          <i class="fa-solid fa-moon absolute top-0 left-0 opacity-0 dark:opacity-100 transition-opacity duration-300"></i>
         </button>
         <a href="https://github.com/arch2kx" class="text-gray-700 dark:text-gray-300">
           <i class="fa-brands fa-github"></i>
