@@ -15,15 +15,16 @@
 }
 
 .dark {
-  --bg:                 #030712;
-  --surface:            #111827;
-  --border:             #374151;
-  --text:               #f9fafb;
+  --bg:                 #161616;
+  --surface:            #1f1f1f;
+  --border:             #515151;
+  --text:               #cccccc;
   --icon:               #d1d5db;
-  --nav-btn:            #404040;
+  --nav-btn:            #171717;
   --nav-btn-active:     #199de3;
-  --btn-border:         #d1d5db;
-  --btn-hover:          #374151;
+  --btn-border:         #909090;
+  --btn-border-hover:   #585757;
+  --btn-hover:          #181818;
   --coming-border:      #4b5563;
   --coming-text:        #9ca3af;
 }
@@ -296,5 +297,18 @@ a {
   font-size: 3rem;
   font-weight: 900;
   font-style: italic;
+  margin: 0;
+}
+
+/* ── Footer ──────────────────────────────────── */
+.site-footer {
+  text-align: center;
+  padding: 2rem 1.5rem;
+  border-top: 1px solid var(--border);
+  color: var(--coming-text);
+  font-size: 0.875rem;
+}
+
+.site-footer p {
   margin: 0;
 }
