@@ -559,6 +559,11 @@
     }
   }
 }
+*, *::before, *::after {
+  transition-property: background-color, color, border-color;
+  transition-duration: 300ms;
+  transition-timing-function: ease;
+}
 @property --tw-border-style {
   syntax: "*";
   inherits: false;
