@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>arch2kx — Fun Stuff</title>
+
+    <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon_io/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
+    <link rel="manifest" href="favicon_io/site.webmanifest">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/output.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+
+    <script>
+      if (localStorage.getItem('theme') === 'dark') {
+        document.documentElement.classList.add('dark');
+      }
+    </script>
+  </head>
+  <body class="bg-gray-50 dark:bg-gray-950 min-h-screen" style="font-family: 'Noto Sans', sans-serif;">
+
+    <!-- Topbar -->
+    <nav class="flex items-center justify-between px-6 py-3 bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-700">
+      <a href="index.html">
+        <img src="images/hoshi_arch_profile_giko_rounded.png" alt="Home" class="h-12 w-12 rounded-lg object-cover">
+      </a>
+      <div class="flex gap-2">
+        <a href="index.html" class="bg-neutral-800 dark:bg-neutral-700 text-white rounded-full px-4 py-1.5 text-sm font-medium">About</a>
+        <a href="projects.html" class="bg-neutral-800 dark:bg-neutral-700 text-white rounded-full px-4 py-1.5 text-sm font-medium">Projects</a>
+        <a href="fun-stuff.html" class="bg-blue-500 text-white rounded-full px-4 py-1.5 text-sm font-medium">Fun Stuff</a>
+      </div>
+      <div class="flex items-center gap-4 text-xl">
+        <button id="dark-toggle" class="text-gray-700 dark:text-gray-300 cursor-pointer bg-transparent border-none">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <a href="https://github.com/arch2kx" class="text-gray-700 dark:text-gray-300">
+          <i class="fa-brands fa-github"></i>
+        </a>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <main class="p-8">
+      <h1 class="text-5xl font-black italic dark:text-white">Fun Stuff Coming Soon</h1>
+    </main>
+
+    <script>
+      document.getElementById('dark-toggle').addEventListener('click', () => {
+        const html = document.documentElement;
+        html.classList.toggle('dark');
+        localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
+      });
+    </script>
+  </body>
+</html>
