@@ -17,11 +17,7 @@
     <link rel="stylesheet" href="css/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
-    <script>
-      if (localStorage.getItem('theme') === 'dark') {
-        document.documentElement.classList.add('dark');
-      }
-    </script>
+    <script src="js/theme.js"></script>
   </head>
   <body class="bg-gray-100 dark:bg-gray-950 min-h-screen" style="font-family: 'Noto Sans', sans-serif;">
 
@@ -119,12 +115,5 @@
       </div>
     </main>
 
-    <script>
-      document.getElementById('dark-toggle').addEventListener('click', () => {
-        const html = document.documentElement;
-        html.classList.toggle('dark');
-        localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
-      });
-    </script>
   </body>
 </html>
