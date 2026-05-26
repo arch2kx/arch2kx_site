@@ -9,12 +9,17 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
   });
 
+  let initialPageShown = false;
+
   function showPage(pageId) {
     const next = document.getElementById(pageId);
     if (!next) return;
-    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active', 'no-animate'));
+    const skipAnimation = initialPageShown || pageId === 'fun-stuff';
+    if (skipAnimation) next.classList.add('no-animate');
     void next.offsetWidth;
     next.classList.add('active');
+    initialPageShown = true;
     document.querySelectorAll('.nav-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.page === pageId);
     });

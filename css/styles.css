@@ -49,6 +49,10 @@
   animation: page-enter 0.5s ease both;
 }
 
+.page.active.no-animate {
+  animation: none;
+}
+
 /* ── Global ──────────────────────────────────── */
 *, *::before, *::after {
   box-sizing: border-box;
