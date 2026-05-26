@@ -95,6 +95,9 @@ a {
 
 #dark-toggle {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 1.3rem;
   width: 1.3rem;
   background: transparent;
@@ -123,6 +126,8 @@ a {
 .dark .dark-icon-moon { opacity: 1; }
 
 .github-link {
+  display: flex;
+  align-items: center;
   color: var(--icon);
 }
 
