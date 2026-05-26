@@ -4,7 +4,7 @@
   --surface:            #ffffff;
   --border:             #e5e7eb;
   --text:               #545454;
-  --icon:               #374151;
+  --icon:               #2b2b2b;
   --nav-btn:            #2b2b2b;
   --nav-btn-active:     #199de3;
   --btn-border:         #bababa;
@@ -59,6 +59,10 @@ a {
   border-bottom: 1px solid var(--border);
 }
 
+.topbar-home {
+  flex: 1;
+}
+
 .topbar-home img {
   height: 3rem;
   width: 3rem;
@@ -86,8 +90,10 @@ a {
 }
 
 .topbar-actions {
+  flex: 1;
   display: flex;
   align-items: center;
+  justify-content: flex-end;
   gap: 1.8rem;
   font-size: 1.5rem;
   color: var(--icon);
@@ -98,8 +104,8 @@ a {
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 1.3rem;
-  width: 1.3rem;
+  height: 0.5rem;
+  width: 0.5rem;
   background: transparent;
   border: none;
   font-size: 1.3rem;
@@ -148,7 +154,7 @@ a {
 
 .about-logo {
   max-width: 24rem;
-  margin: 0 auto 2rem;
+  margin: 0 auto 4rem;
   display: block;
 }
 
