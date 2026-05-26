@@ -9,14 +9,30 @@ document.addEventListener('DOMContentLoaded', () => {
     localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
   });
 
-  document.querySelectorAll('.nav-btn').forEach(link => {
-    link.addEventListener('click', e => {
-      if (link.classList.contains('active')) return;
+  function showPage(pageId) {
+    const next = document.getElementById(pageId);
+    if (!next) return;
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    void next.offsetWidth; // restart animation
+    next.classList.add('active');
+    document.querySelectorAll('.nav-btn').forEach(btn => {
+      btn.classList.toggle('active', btn.dataset.page === pageId);
+    });
+  }
+
+  document.querySelectorAll('[data-page]').forEach(el => {
+    el.addEventListener('click', e => {
       e.preventDefault();
-      const href = link.getAttribute('href');
-      const main = document.querySelector('main');
-      main.classList.add('leaving');
-      setTimeout(() => { window.location.href = href; }, 200);
+      const pageId = el.dataset.page;
+      history.pushState({ page: pageId }, '', '#' + pageId);
+      showPage(pageId);
     });
   });
+
+  window.addEventListener('popstate', e => {
+    showPage(e.state?.page || 'about');
+  });
+
+  const initial = location.hash.slice(1);
+  if (initial && document.getElementById(initial)) showPage(initial);
 });

@@ -22,13 +22,13 @@
   <body>
 
     <nav class="topbar">
-      <a href="index.html" class="topbar-home">
+      <a href="#about" class="topbar-home">
         <img src="images/hoshi_arch_profile_giko_rounded_color_change.png" alt="Home" width="48" height="48" loading="eager">
       </a>
       <div class="topbar-nav">
-        <a href="index.html" class="nav-btn active">About</a>
-        <a href="projects.html" class="nav-btn">Projects</a>
-        <a href="fun-stuff.html" class="nav-btn">Fun Stuff</a>
+        <a class="nav-btn active" data-page="about">About</a>
+        <a class="nav-btn" data-page="projects">Projects</a>
+        <a class="nav-btn" data-page="fun-stuff">Fun Stuff</a>
       </div>
       <div class="topbar-actions">
         <button id="dark-toggle">
@@ -41,13 +41,86 @@
       </div>
     </nav>
 
-    <main class="about-main">
+    <!-- About -->
+    <section id="about" class="page about-main">
       <div class="about-card">
         <img src="images/arch2k2x_ba-style_light.png" alt="arch2kx logo" class="about-logo">
         <p class="about-tagline">Hello, I am Arch (btw)—I code stuff.</p>
-        <a href="projects.html" class="explore-btn">Explore →</a>
+        <a class="explore-btn" data-page="projects">Explore →</a>
       </div>
-    </main>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="page projects-main">
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="card-banner banner-blue">
+            <img src="images/arona.png" alt="Aronasay">
+          </div>
+          <div class="card-body">
+            <p class="card-title">Aronasay</p>
+            <a href="#" class="website-btn">Website →</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="card-banner banner-blue-light">
+            <img src="images/ba-student-quiz-icon.png" alt="Blue Archive Student Quiz">
+          </div>
+          <div class="card-body">
+            <p class="card-title">Blue Archive Student Quiz</p>
+            <a href="#" class="website-btn">Website →</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="card-banner banner-blue">
+            <i class="fa-solid fa-exclamation card-banner-icon"></i>
+          </div>
+          <div class="card-body">
+            <p class="card-title">Annoying BA Extension</p>
+            <span class="coming-soon">Coming Soon</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="card-banner banner-amber">
+            <img src="images/arona.png" alt="placeholder" class="placeholder-img">
+          </div>
+          <div class="card-body">
+            <p class="card-title">Test</p>
+            <span class="coming-soon">Coming Soon</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="card-banner banner-lime">
+            <img src="images/arona.png" alt="placeholder" class="placeholder-img">
+          </div>
+          <div class="card-body">
+            <p class="card-title">Test</p>
+            <span class="coming-soon">Coming Soon</span>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="card-banner banner-purple">
+            <img src="images/arona.png" alt="placeholder" class="placeholder-img">
+          </div>
+          <div class="card-body">
+            <p class="card-title">Test</p>
+            <span class="coming-soon">Coming Soon</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Fun Stuff -->
+    <section id="fun-stuff" class="page funstuff-main">
+      <h1 class="funstuff-title">Fun Stuff Coming Soon</h1>
+    </section>
 
   </body>
 </html>
