@@ -13,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const next = document.getElementById(pageId);
     if (!next) return;
     document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
-    void next.offsetWidth; // restart animation
+    void next.offsetWidth;
     next.classList.add('active');
     document.querySelectorAll('.nav-btn').forEach(btn => {
       btn.classList.toggle('active', btn.dataset.page === pageId);
@@ -24,7 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     el.addEventListener('click', e => {
       e.preventDefault();
       const pageId = el.dataset.page;
-      history.pushState({ page: pageId }, '', '#' + pageId);
+      history.pushState({ page: pageId }, '', '/' + pageId);
       showPage(pageId);
     });
   });
@@ -33,6 +33,23 @@ document.addEventListener('DOMContentLoaded', () => {
     showPage(e.state?.page || 'about');
   });
 
-  const initial = location.hash.slice(1);
-  if (initial && document.getElementById(initial)) showPage(initial);
+  // Handle redirect from 404.html (direct navigation to /about, /projects, etc.)
+  const redirect = sessionStorage.getItem('spa-redirect');
+  if (redirect) {
+    sessionStorage.removeItem('spa-redirect');
+    const pageId = redirect.replace(/^\//, '').split('/')[0];
+    if (pageId && document.getElementById(pageId)) {
+      history.replaceState({ page: pageId }, '', '/' + pageId);
+      showPage(pageId);
+    } else {
+      showPage('about');
+    }
+  } else {
+    const path = location.pathname.replace(/^\//, '').split('/')[0];
+    if (path && document.getElementById(path)) {
+      showPage(path);
+    } else {
+      showPage('about');
+    }
+  }
 });

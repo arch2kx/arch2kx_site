@@ -1,8 +1,8 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=600">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>arch2k2x</title>
 
     <link rel="apple-touch-icon" sizes="180x180" href="favicon_io/apple-touch-icon.png">
@@ -14,41 +14,103 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/styles.css?v=7">
+    <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
-    <script src="script.js" defer></script>
-</head>
+    <script src="js/theme.js"></script>
+  </head>
+  <body>
 
-<body>
-    <div class="socials">
-        <a id="socialGitHub" class="link-2" title="GitHub">
-            <i class="fa-fw fa-brands fa-github"></i>
-            <span class="body">GitHub</span>
+    <nav class="topbar">
+      <a href="/" class="topbar-home" data-page="about">
+        <img src="images/hoshi_arch_profile_giko_rounded_color_change.png" alt="Home" width="48" height="48" loading="eager">
+      </a>
+      <div class="topbar-nav">
+        <a class="nav-btn active" data-page="about">About</a>
+        <a class="nav-btn" data-page="projects">Projects</a>
+        <a class="nav-btn" data-page="fun-stuff">Fun Stuff</a>
+      </div>
+      <div class="topbar-actions">
+        <button id="dark-toggle">
+          <i class="fa-solid fa-sun dark-icon-sun"></i>
+          <i class="fa-solid fa-moon dark-icon-moon"></i>
+        </button>
+        <a href="https://github.com/arch2kx" class="github-link">
+          <i class="fa-brands fa-github"></i>
         </a>
-        <a id="socialDiscord" class="link-2" title="Discord">
-            <i class="fa-fw fa-brands fa-discord"></i>
-            <span class="body">Discord</span>
+        <a href="https://discord.com/users/817571382069559296" class="discord-link">
+          <i class="fa-brands fa-discord"></i>
         </a>
-        <a id="socialRoblox" class="link-1" title="Roblox">
-            <img src="images/roblox_icon.png" alt="Roblox">
-            <span class="body">Roblox</span>
-        </a>
-    </div>
+      </div>
+    </nav>
 
-    <div class="container">
-        <img class="logo" id="logo" src="images/arch2k2x_ba-style@nulla.top.png" alt="logo" width="auto" height="20">
-        <p class="body">I code stuff sometimes.</p>
-        <div class="links">
-            <a id="linkAronasay" class="link-1">
-                <img src="images/arona.png" alt="aronasay">
-                Aronasay
-            </a>
-            <a id="linkBAQuiz" class="link-1">
-                <img src="images/ba-student-quiz-icon.png" alt="Blue Archive Student Quiz">
-                Blue Archive Student Quiz
-            </a>
+    <!-- About -->
+    <section id="about" class="page about-main">
+      <div class="about-card">
+        <div class="about-logo-wrap">
+          <img src="images/arch2k2x_ba-style_light.png" alt="arch2kx logo" class="about-logo logo-light">
+          <img src="images/arch2k2x_ba-style_dark.png"  alt="arch2kx logo" class="about-logo logo-dark">
         </div>
-    </div>
-</body>
+        <p class="about-tagline">Hello, I am Arch (btw)—I code stuff.</p>
+        <a class="explore-btn" data-page="projects">Explore →</a>
+      </div>
+    </section>
+
+    <!-- Projects -->
+    <section id="projects" class="page projects-main">
+      <div class="projects-grid">
+
+        <div class="project-card">
+          <div class="card-banner banner-img">
+            <img class="card-banner-bg" src="images/aronasay_banner.png" alt="">
+            <div class="card-icon-box">
+              <img src="images/arona.png" alt="Aronasay">
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-title">Aronasay</p>
+            <p class="card-desc">Cowsay but Arona from Blue Archive!</p>
+            <a href="https://arch2kx.github.io/aronasay/" class="website-btn" target="_blank" rel="noopener noreferrer">Website →</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="card-banner banner-blue">
+            <div class="card-icon-box">
+              <img src="images/ba_student_quiz_icon.webp" alt="Blue Archive Student Quiz">
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-title">Blue Archive Student Quiz</p>
+            <p class="card-desc">Test your Blue Archive knowledge on students' traits!</p>
+            <a href="https://arch2kx.github.io/archs-ba-student-quiz/" class="website-btn" target="_blank" rel="noopener noreferrer">Website →</a>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="card-banner banner-construction">
+            <div class="card-icon-box">
+              <img src="images/construction.webp" alt="Blue Archive Student Quiz">
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-title">Annoying BA Popup</p>
+            <p class="card-desc">Chrome/Firefox Extension that annoys you, I guess.</p>
+            <span class="coming-soon">Coming Soon</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Fun Stuff -->
+    <section id="fun-stuff" class="page funstuff-main">
+      <h1 class="funstuff-title">Coming Soon ;)</h1>
+    </section>
+
+    <footer class="site-footer">
+      <p>&copy; 2026 arch2kx. Licensed under MIT.</p>
+    </footer>
+
+  </body>
 </html>
