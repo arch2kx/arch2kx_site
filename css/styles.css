@@ -54,6 +54,13 @@
 }
 
 /* ── Global ──────────────────────────────────── */
+html {
+  /* Scale the root font size above 1920px so all rem-based values
+     (padding, widths, text) grow proportionally on large/4K displays.
+     Below ~1928px (including 1080p) it stays pinned at 16px. */
+  font-size: clamp(16px, 0.83vw, 28px);
+}
+
 *, *::before, *::after {
   box-sizing: border-box;
   transition-property: background-color, color, border-color;
@@ -82,22 +89,22 @@ a {
   left: 0;
   right: 0;
   z-index: 100;
-  display: flex;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
   align-items: center;
-  justify-content: space-between;
   padding: 0.75rem 1.5rem;
   background-color: var(--surface);
   border-bottom: 1px solid var(--border);
 }
 
 .topbar-home {
-  flex: 1;
+  justify-self: start;
 }
 
 .topbar-home img {
-  height: 3rem;
-  width: 3rem;
-  border-radius: 0.5rem;
+  height: 2.8rem;
+  width: 2.8rem;
+  border-radius: 5px;
   object-fit: cover;
   display: block;
 }
@@ -122,7 +129,6 @@ a {
 }
 
 .topbar-actions {
-  flex: 1;
   display: flex;
   align-items: center;
   justify-content: flex-end;
@@ -179,14 +185,14 @@ a {
 
 /* ── About page ──────────────────────────────── */
 .about-main {
-  max-width: 35rem;
+  max-width: clamp(35rem, 29vw, 80rem);
   margin: 4rem auto 0;
   padding: 0 1rem;
 }
 
 .about-card {
   background-color: var(--surface);
-  border-radius: 1rem;
+  border-radius: 0.5rem;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
   padding: 3rem;
   text-align: center;
@@ -219,7 +225,7 @@ a {
   display: inline-block;
   border: 1px solid var(--btn-border);
   color: var(--text);
-  border-radius: 9999px;
+  border-radius: 5px;
   padding: 0.625rem 2rem;
   font-weight: 500;
   cursor: pointer;
@@ -233,7 +239,7 @@ a {
 
 /* ── Projects page ───────────────────────────── */
 .projects-main {
-  max-width: 64rem;
+  max-width: clamp(64rem, 53vw, 120rem);
   margin: 0 auto;
   padding: 2rem;
 }
@@ -246,7 +252,7 @@ a {
 
 .project-card {
   background-color: var(--surface);
-  border-radius: 0.75rem;
+  border-radius: 10px;
   box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   display: flex;
@@ -326,7 +332,7 @@ a {
   display: inline-block;
   border: 1px solid var(--btn-border);
   color: var(--text);
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 0.6rem 1rem;
   font-size: 0.875rem;
   font-weight: 400;
@@ -340,7 +346,7 @@ a {
   display: inline-block;
   border: 1px solid var(--coming-border);
   color: var(--coming-text);
-  border-radius: 10px;
+  border-radius: 5px;
   padding: 0.6rem 1rem;
   font-size: 0.875rem;
   font-weight: 400;
