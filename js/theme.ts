@@ -1,4 +1,6 @@
 document.documentElement.classList.remove('preload');
+document.documentElement.style.removeProperty('background-color');
+document.documentElement.style.removeProperty('color');
 
 const DEFAULT_PAGE = 'about';
 
