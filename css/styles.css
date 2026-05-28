@@ -2,6 +2,7 @@
 
 /* ── Variables ───────────────────────────────── */
 :root {
+  color-scheme: light;
   --bg:                 #f3f4f6;
   --surface:            #ffffff;
   --border:             #e5e7eb;
@@ -17,6 +18,7 @@
 }
 
 .dark {
+  color-scheme: dark;
   --bg:                 #161616;
   --surface:            #1f1f1f;
   --border:             #515151;
