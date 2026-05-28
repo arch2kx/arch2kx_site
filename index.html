@@ -10,11 +10,29 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
     <link rel="manifest" href="favicon_io/site.webmanifest">
 
+    <!-- preload:images -->
+    <link rel="preload" as="image" type="image/webp" href="images/arch_giko_hoshi_new.webp">
+    <link rel="preload" as="image" type="image/webp" href="images/arch2k2x_ba-style_light.webp">
+    <link rel="preload" as="image" type="image/webp" href="images/arch2k2x_ba-style_dark.webp">
+    <link rel="preload" as="image" type="image/webp" href="images/aronasay_banner.webp">
+    <link rel="preload" as="image" type="image/webp" href="images/arona.webp">
+    <link rel="preload" as="image" type="image/webp" href="images/ba_student_quiz_icon.webp">
+    <link rel="preload" as="image" type="image/webp" href="images/construction.webp">
+    <!-- /preload:images -->
+
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap" rel="stylesheet">
 
+    <script>document.documentElement.classList.add('preload');if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark')</script>
+    <style>
+      html.dark, html.dark body { background-color: #161616 !important; color: #cccccc !important; }
+      .preload *, .preload *::before, .preload *::after { transition: none !important; }
+    </style>
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/webfonts/fa-solid-900.woff2">
+    <link rel="preload" as="font" type="font/woff2" crossorigin href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/webfonts/fa-brands-400.woff2">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
 
     <script type="module" src="js/theme.js"></script>
@@ -23,7 +41,7 @@
 
     <nav class="topbar">
       <a href="/" class="topbar-home" data-page="about">
-        <img src="images/arch_giko_hoshi_new.png" alt="Home" width="48" height="48" loading="eager">
+        <img src="images/arch_giko_hoshi_new.webp" alt="Home" width="48" height="48" loading="eager">
       </a>
       <div class="topbar-nav">
         <a class="nav-btn active" data-page="about">About</a>
@@ -48,8 +66,8 @@
     <section id="about" class="page about-main">
       <div class="about-card">
         <div class="about-logo-wrap">
-          <img src="images/arch2k2x_ba-style_light.png" alt="arch2kx logo" class="about-logo logo-light">
-          <img src="images/arch2k2x_ba-style_dark.png"  alt="arch2kx logo" class="about-logo logo-dark">
+          <img src="images/arch2k2x_ba-style_light.webp" alt="arch2kx logo" class="about-logo logo-light">
+          <img src="images/arch2k2x_ba-style_dark.webp"  alt="arch2kx logo" class="about-logo logo-dark">
         </div>
         <p class="about-tagline">Hello, I am Arch (btw)—I code stuff.</p>
         <a class="explore-btn" data-page="projects">Explore →</a>
@@ -62,9 +80,9 @@
 
         <div class="project-card">
           <div class="card-banner banner-img">
-            <img class="card-banner-bg" src="images/aronasay_banner.png" alt="">
+            <img class="card-banner-bg" src="images/aronasay_banner.webp" alt="">
             <div class="card-icon-box">
-              <img src="images/arona.png" alt="Aronasay">
+              <img src="images/arona.webp" alt="Aronasay">
             </div>
           </div>
           <div class="card-body">

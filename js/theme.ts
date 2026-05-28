@@ -1,12 +1,11 @@
+document.documentElement.classList.remove('preload');
+
 const DEFAULT_PAGE = 'about';
 
 type PageState = {
   page: string;
 } | null;
 
-if (localStorage.getItem('theme') === 'dark') {
-  document.documentElement.classList.add('dark');
-}
 
 document.addEventListener('DOMContentLoaded', () => {
   const darkToggle = document.getElementById('dark-toggle') as HTMLButtonElement | null;
