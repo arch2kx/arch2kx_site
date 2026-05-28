@@ -1,6 +1,7 @@
 document.documentElement.classList.remove('preload');
 document.documentElement.style.removeProperty('background-color');
 document.documentElement.style.removeProperty('color');
+document.documentElement.style.removeProperty('color-scheme');
 
 const DEFAULT_PAGE = 'about';
 
