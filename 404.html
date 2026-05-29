@@ -1,7 +1,9 @@
 <!doctype html>
 <html>
 <head>
+  <style>html,body{background-color:#f3f4f6}.dark{background-color:#161616}</style>
   <script>
+    if(localStorage.getItem('theme')==='dark')document.documentElement.classList.add('dark');
     sessionStorage.setItem('spa-redirect', location.pathname);
     location.replace('/');
   </script>

@@ -60,7 +60,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const pageId = el.dataset.page;
       if (!pageId) return;
 
-      history.pushState({ page: pageId }, '', '/' + pageId);
+      history.pushState({ page: pageId }, '', pageId === 'about' ? '/' : '/' + pageId);
       showPage(pageId);
     });
   });
@@ -79,7 +79,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageId = redirect.replace(/^\//, '').split('/')[0];
 
     if (pageId && document.getElementById(pageId)) {
-      history.replaceState({ page: pageId }, '', '/' + pageId);
+      history.replaceState({ page: pageId }, '', pageId === 'about' ? '/' : '/' + pageId);
       showPage(pageId);
     } else {
       showPage(DEFAULT_PAGE);
