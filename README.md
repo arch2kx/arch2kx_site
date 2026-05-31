@@ -1,4 +1,5 @@
-### My personal website
+### Hello
+This is my personal website, where I show stuff I can think of.
 
-Link:
-https://arch2kx.github.io/
+Link (Updated):
+arch2kx.pages.dev
