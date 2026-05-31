@@ -10,21 +10,18 @@ document.addEventListener('DOMContentLoaded', () => {
         html.classList.toggle('dark');
         localStorage.setItem('theme', html.classList.contains('dark') ? 'dark' : 'light');
     });
-    let initialPageShown = false;
-    function showPage(pageId) {
+    function showPage(pageId, skipAnim = false) {
         const next = document.getElementById(pageId);
         if (!next)
             return;
         document.querySelectorAll('.page').forEach(p => {
             p.classList.remove('active', 'no-animate');
         });
-        const skipAnimation = initialPageShown || pageId === 'fun-stuff';
-        if (skipAnimation) {
+        if (skipAnim || pageId === 'fun-stuff') {
             next.classList.add('no-animate');
         }
         void next.offsetWidth;
         next.classList.add('active');
-        initialPageShown = true;
         document.querySelectorAll('.nav-btn').forEach(btn => {
             const btnPage = btn.dataset.page;
             btn.classList.toggle('active', btnPage === pageId);
@@ -38,12 +35,12 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!pageId)
                 return;
             history.pushState({ page: pageId }, '', pageId === 'about' ? '/' : '/' + pageId);
-            showPage(pageId);
+            showPage(pageId, el.classList.contains('nav-btn'));
         });
     });
     window.addEventListener('popstate', (e) => {
         const state = e.state;
-        showPage(state?.page || DEFAULT_PAGE);
+        showPage(state?.page || DEFAULT_PAGE, true);
     });
     const redirect = sessionStorage.getItem('spa-redirect');
     if (redirect) {
@@ -66,6 +63,7 @@ document.addEventListener('DOMContentLoaded', () => {
             showPage(DEFAULT_PAGE);
         }
     }
+    document.documentElement.style.removeProperty('visibility');
 });
 export {};
 //# sourceMappingURL=theme.js.map

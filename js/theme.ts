@@ -24,9 +24,7 @@ document.addEventListener('DOMContentLoaded', () => {
     );
   });
 
-  let initialPageShown = false;
-
-  function showPage(pageId: string) {
+  function showPage(pageId: string, skipAnim = false) {
     const next = document.getElementById(pageId) as HTMLElement | null;
     if (!next) return;
 
@@ -34,16 +32,12 @@ document.addEventListener('DOMContentLoaded', () => {
       p.classList.remove('active', 'no-animate');
     });
 
-    const skipAnimation = initialPageShown || pageId === 'fun-stuff';
-
-    if (skipAnimation) {
+    if (skipAnim || pageId === 'fun-stuff') {
       next.classList.add('no-animate');
     }
 
     void next.offsetWidth;
     next.classList.add('active');
-
-    initialPageShown = true;
 
     document.querySelectorAll<HTMLElement>('.nav-btn').forEach(btn => {
       const btnPage = btn.dataset.page;
@@ -61,14 +55,14 @@ document.addEventListener('DOMContentLoaded', () => {
       if (!pageId) return;
 
       history.pushState({ page: pageId }, '', pageId === 'about' ? '/' : '/' + pageId);
-      showPage(pageId);
+      showPage(pageId, el.classList.contains('nav-btn'));
     });
   });
 
   window.addEventListener('popstate', (e: PopStateEvent) => {
     const state = e.state as PageState;
 
-    showPage(state?.page || DEFAULT_PAGE);
+    showPage(state?.page || DEFAULT_PAGE, true);
   });
 
   const redirect = sessionStorage.getItem('spa-redirect');
@@ -93,4 +87,6 @@ document.addEventListener('DOMContentLoaded', () => {
       showPage(DEFAULT_PAGE);
     }
   }
+
+  document.documentElement.style.removeProperty('visibility');
 });
