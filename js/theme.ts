@@ -9,6 +9,7 @@ type PageState = {
   page: string;
 } | null;
 
+history.scrollRestoration = 'manual';
 
 document.addEventListener('DOMContentLoaded', () => {
   const darkToggle = document.getElementById('dark-toggle') as HTMLButtonElement | null;
@@ -28,6 +29,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const next = document.getElementById(pageId) as HTMLElement | null;
     if (!next) return;
 
+
     document.querySelectorAll<HTMLElement>('.page').forEach(p => {
       p.classList.remove('active', 'no-animate');
     });
@@ -38,6 +40,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     void next.offsetWidth;
     next.classList.add('active');
+    window.scrollTo(0, 0);
 
     document.querySelectorAll<HTMLElement>('.nav-btn').forEach(btn => {
       const btnPage = btn.dataset.page;

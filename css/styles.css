@@ -5,7 +5,7 @@
   color-scheme: light;
   --bg:                 #f3f4f6;
   --surface:            #ffffff;
-  --border:             #e5e7eb;
+  --border:             #cccccc;
   --text:               #545454;
   --icon:               #2b2b2b;
   --nav-btn:            #2b2b2b;
@@ -369,14 +369,162 @@ a {
 
 /* ── Fun Stuff page ──────────────────────────── */
 .funstuff-main {
-  padding: 2rem;
+  padding: 2rem 1.5rem;
+}
+
+#fun-stuff.active {
+  display: block;
+}
+
+.funstuff-inner {
+  max-width: clamp(64rem, 72vw, 140rem);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+.funstuff-header {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.25rem;
 }
 
 .funstuff-title {
-  font-size: 3rem;
-  font-weight: 600;
-  font-style: italic;
+  font-size: 2rem;
+  font-weight: 700;
+  margin: 0 0 0.4rem;
+}
+
+.funstuff-subtitle {
+  font-size: 0.95rem;
+  color: var(--coming-text);
   margin: 0;
+}
+
+.funstuff-section {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.funstuff-section-label {
+  font-family: 'Source Code Pro', monospace;
+  font-size: 1rem;
+  font-weight: 600;
+  padding-bottom: 8px;
+  color: var(--coming-text);
+  letter-spacing: 0.05em;
+  margin: 0;
+}
+
+.funstuff-terminal-wrap {
+  display: contents;
+}
+
+.funstuff-no-terminal {
+  display: none;
+}
+
+.funstuff-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+
+.funstuff-card {
+  background-color: var(--surface);
+  border-radius: 10px;
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: transform 250ms ease, box-shadow 250ms ease, background-color 150ms ease;
+}
+
+.funstuff-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.16), 0 2px 8px rgba(0, 0, 0, 0.10);
+}
+
+.funstuff-card-body {
+  padding: 1.25rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.funstuff-card-title {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0 0.3rem;
+}
+
+.funstuff-card-desc {
+  margin: 0 0 1.2rem;
+  font-size: 0.8rem;
+}
+
+.terminal {
+  width: 100ch;
+  height: 30lh;
+  margin: 0 auto;
+  background: #1f1f1f;
+  color: #f2f2f2;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 0.85rem;
+  font-weight: 500;
+  line-height: 1.3;
+  border-radius: 8px;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+#output {
+  flex: 1;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  scrollbar-width: none;
+}
+
+#output::-webkit-scrollbar {
+  display: none;
+}
+
+.input-line {
+  display: flex;
+  gap: 0.5ch;
+  flex-shrink: 0;
+}
+
+.terminal input {
+  background: transparent;
+  border: none;
+  color: #f2f2f2;
+  -webkit-text-fill-color: #f2f2f2;
+  font-family: inherit;
+  font-size: inherit;
+  outline: none;
+  flex: 1.1;
+  caret-color: #cccccc;
+}
+
+/* x256-style color classes */
+.c-arch { color: #1dc5ff; font-weight: 800; }
+.c-arch-reg { color: #1dc5ff; font-weight: 800; }
+.c-options { color: #37ff9a; font-weight: 500; }
+.c-val  { color: #f2f2f2; font-weight: 500; }
+.c-bold { color: #1dc5ff; font-weight: 500; }
+.c-dim  { color: #e6e6e6; font-weight: 500; }
+.c-err  { color: #ff5737; font-weight: 500; }
+
+.swatch {
+  display: inline-block;
+  width: 3.2ch;
+  height: 1lh;
+  vertical-align: bottom;
 }
 
 /* ── Footer ──────────────────────────────────── */
@@ -459,6 +607,21 @@ a {
   }
 
   .funstuff-title {
-    font-size: 2rem;
+    font-size: 1.5rem;
+  }
+
+  .funstuff-terminal-wrap {
+    display: none;
+  }
+
+  .funstuff-no-terminal {
+    display: block;
+    color: var(--coming-text);
+    font-size: 0.875rem;
+    margin: 0;
+  }
+
+  .funstuff-grid {
+    grid-template-columns: 1fr;
   }
 }

@@ -33,8 +33,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap" onload="this.onload=null;this.rel='stylesheet'">
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap"></noscript>
-    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,400;0,700;1,400&display=swap"></noscript>
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,300;0,400;0,600;0,700;1,400&display=swap"></noscript>
 
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
     <link rel="preload" as="font" type="font/woff2" crossorigin href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/webfonts/fa-solid-900.woff2">
@@ -131,13 +131,38 @@
 
     <!-- Fun Stuff -->
     <section id="fun-stuff" class="page funstuff-main">
-     <!-- <h1 class="funstuff-title">Coming Soon ;)</h1> -->
-      <div class="terminal">
-        <div id="output"></div>
-        <div class="input-line">
-          <span class="c-arch">arch2kx@archlinux ~ %</span>
-          <input type="text" id="commandInput" autocomplete="off" spellcheck="false">
+      <div class="funstuff-inner">
+
+        <header class="funstuff-header">
+          <h1 class="funstuff-title">Fun Stuff</h1>
+          <p class="funstuff-subtitle">Place where I experiment with cool stuff.</p>
+        </header>
+
+        <!-- Terminal section -->
+        <div class="funstuff-section">
+          <h2 class="funstuff-section-label"># Terminal Emulator</h2>
+          <div class="funstuff-terminal-wrap">
+            <div class="terminal">
+              <div id="output"></div>
+              <div class="input-line">
+                <span class="c-val">arch2kx@archlinux ~ %</span>
+                <input type="text" id="commandInput" autocomplete="off" spellcheck="false">
+              </div>
+            </div>
+          </div>
+          <p class="funstuff-no-terminal">Terminal requires a desktop browser.</p>
         </div>
+
+        <!-- Add more sections below — copy the funstuff-section pattern -->
+        <!-- Example:
+        <div class="funstuff-section">
+          <h2 class="funstuff-section-label"># games</h2>
+          <div class="funstuff-grid">
+            <div class="funstuff-card"> ... </div>
+          </div>
+        </div>
+        -->
+
       </div>
     </section>
 

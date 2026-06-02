@@ -3,6 +3,7 @@ document.documentElement.style.removeProperty('background-color');
 document.documentElement.style.removeProperty('color');
 document.documentElement.style.removeProperty('color-scheme');
 const DEFAULT_PAGE = 'about';
+history.scrollRestoration = 'manual';
 document.addEventListener('DOMContentLoaded', () => {
     const darkToggle = document.getElementById('dark-toggle');
     darkToggle?.addEventListener('click', () => {
@@ -22,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         void next.offsetWidth;
         next.classList.add('active');
+        window.scrollTo(0, 0);
         document.querySelectorAll('.nav-btn').forEach(btn => {
             const btnPage = btn.dataset.page;
             btn.classList.toggle('active', btnPage === pageId);
