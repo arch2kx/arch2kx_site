@@ -34,7 +34,16 @@ document.addEventListener('DOMContentLoaded', () => {
         }
         void next.offsetWidth;
         next.classList.add('active');
-        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+        const button = document.getElementById("funStuffScrollTop");
+        const scrollToTop = () => {
+            window.scrollTo({
+                top: 0,
+                behavior: "instant"
+            });
+        };
+        if (button) {
+            button.addEventListener("click", scrollToTop);
+        }
         document.querySelectorAll('.nav-btn').forEach(btn => {
             const btnPage = btn.dataset.page;
             btn.classList.toggle('active', btnPage === pageId);
