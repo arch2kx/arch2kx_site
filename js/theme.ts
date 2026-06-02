@@ -9,6 +9,16 @@ type PageState = {
   page: string;
 } | null;
 
+// Prevent browser from auto-restoring scroll position
+if ('scrollRestoration' in window.history) {
+  window.history.scrollRestoration = 'manual';
+}
+
+// Force window to scroll to top-left corner
+window.addEventListener('load', (): void => {
+  window.scrollTo(0, 0);
+});
+
 history.scrollRestoration = 'manual';
 
 document.addEventListener('DOMContentLoaded', () => {

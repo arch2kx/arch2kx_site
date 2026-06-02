@@ -3,6 +3,14 @@ document.documentElement.style.removeProperty('background-color');
 document.documentElement.style.removeProperty('color');
 document.documentElement.style.removeProperty('color-scheme');
 const DEFAULT_PAGE = 'about';
+// Prevent browser from auto-restoring scroll position
+if ('scrollRestoration' in window.history) {
+    window.history.scrollRestoration = 'manual';
+}
+// Force window to scroll to top-left corner
+window.addEventListener('load', () => {
+    window.scrollTo(0, 0);
+});
 history.scrollRestoration = 'manual';
 document.addEventListener('DOMContentLoaded', () => {
     const darkToggle = document.getElementById('dark-toggle');
