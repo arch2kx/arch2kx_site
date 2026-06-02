@@ -7,13 +7,16 @@ const DEFAULT_PAGE = 'about';
 if ('scrollRestoration' in window.history) {
     window.history.scrollRestoration = 'manual';
 }
-// Force window to scroll to top-left corner
-window.addEventListener('load', () => {
-    window.scrollTo(0, 0);
-});
 history.scrollRestoration = 'manual';
+window.addEventListener('load', () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' }); // 'auto' ensures instant scroll on refresh
+});
 document.addEventListener('DOMContentLoaded', () => {
     const darkToggle = document.getElementById('dark-toggle');
+    const fswindow = document.getElementById('funStuffScrollTop');
+    fswindow?.addEventListener('click', () => {
+        window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    });
     darkToggle?.addEventListener('click', () => {
         const html = document.documentElement;
         html.classList.toggle('dark');
@@ -26,12 +29,12 @@ document.addEventListener('DOMContentLoaded', () => {
         document.querySelectorAll('.page').forEach(p => {
             p.classList.remove('active', 'no-animate');
         });
-        if (skipAnim || pageId === 'fun-stuff') {
+        if (skipAnim) {
             next.classList.add('no-animate');
         }
         void next.offsetWidth;
         next.classList.add('active');
-        window.scrollTo(0, 0);
+        window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
         document.querySelectorAll('.nav-btn').forEach(btn => {
             const btnPage = btn.dataset.page;
             btn.classList.toggle('active', btnPage === pageId);

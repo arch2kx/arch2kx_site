@@ -13,16 +13,19 @@ type PageState = {
 if ('scrollRestoration' in window.history) {
   window.history.scrollRestoration = 'manual';
 }
-
-// Force window to scroll to top-left corner
-window.addEventListener('load', (): void => {
-  window.scrollTo(0, 0);
-});
-
 history.scrollRestoration = 'manual';
+
+window.addEventListener('load', (): void => {
+  window.scrollTo({ top: 0, left: 0, behavior: 'auto' }); // 'auto' ensures instant scroll on refresh
+});
 
 document.addEventListener('DOMContentLoaded', () => {
   const darkToggle = document.getElementById('dark-toggle') as HTMLButtonElement | null;
+  const fswindow = document.getElementById('funStuffScrollTop');
+
+  fswindow?.addEventListener('click', (): void => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  });
 
   darkToggle?.addEventListener('click', () => {
     const html = document.documentElement;
@@ -39,18 +42,18 @@ document.addEventListener('DOMContentLoaded', () => {
     const next = document.getElementById(pageId) as HTMLElement | null;
     if (!next) return;
 
-
     document.querySelectorAll<HTMLElement>('.page').forEach(p => {
       p.classList.remove('active', 'no-animate');
     });
 
-    if (skipAnim || pageId === 'fun-stuff') {
-      next.classList.add('no-animate');
+    if (skipAnim) {
+      next.classList.add('no-animate')
     }
 
     void next.offsetWidth;
     next.classList.add('active');
-    window.scrollTo(0, 0);
+
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
 
     document.querySelectorAll<HTMLElement>('.nav-btn').forEach(btn => {
       const btnPage = btn.dataset.page;
