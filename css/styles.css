@@ -198,7 +198,7 @@ a {
 .about-card {
   background-color: var(--surface);
   border-radius: 10px;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.07);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.09), 0 1px 3px rgba(0, 0, 0, 0.08);
   padding: 3rem;
   text-align: center;
 }
@@ -258,7 +258,7 @@ a {
 .project-card {
   background-color: var(--surface);
   border-radius: 10px;
-  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.12), 0 1px 3px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.09), 0 1px 3px rgba(0, 0, 0, 0.08);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -267,7 +267,7 @@ a {
 
 .project-card:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 36px rgba(0, 0, 0, 0.16), 0 2px 8px rgba(0, 0, 0, 0.10);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.10), 0 2px 5px rgba(0, 0, 0, 0.10);
 }
 
 .card-banner {
@@ -480,6 +480,7 @@ a {
   flex-direction: column;
   overflow: hidden;
   box-sizing: border-box;
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.10), 0 2px 3px rgba(0, 0, 0, 0.40);
 }
 
 #output {
