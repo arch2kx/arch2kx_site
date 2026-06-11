@@ -10,6 +10,7 @@
     <link rel="icon" type="image/png" sizes="16x16" href="favicon_io/favicon-16x16.png">
     <link rel="manifest" href="favicon_io/site.webmanifest">
 
+    <!-- Since Firefox likes to do this sort of thing I have to add a hack to this... -->
     <script>document.documentElement.style.visibility='hidden';document.documentElement.classList.add('preload');if(localStorage.getItem('theme')==='dark'){document.documentElement.classList.add('dark');document.documentElement.style.colorScheme='dark';document.documentElement.style.backgroundColor='#161616';document.documentElement.style.color='#cccccc';}else{document.documentElement.style.colorScheme='light';}</script>
     <style>
       html.dark, html.dark body { background-color: #161616 !important; color: #cccccc !important; }
@@ -114,6 +115,20 @@
         </div>
 
         <div class="project-card">
+          <div class="card-banner banner-img">
+            <img class="card-banner-bg" src="images/etp_banner.webp" alt="">
+            <div class="card-icon-box">
+              <img src="images/mika_etp_icon.webp" alt="">
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-title">Eden Treaty Pandemonium</p>
+            <p class="card-desc">Get the Trinity-loving princess to fight against Gehenna students!</p>
+            <a href="https://github.com/arch2kx/etp-raylib" class="website-btn" target="_blank" rel="noopener noreferrer">GitHub →</a>
+          </div>
+        </div>
+
+        <div class="project-card">
           <div class="card-banner banner-construction">
             <div class="card-icon-box">
               <img src="images/construction.webp" alt="Blue Archive Student Quiz">
@@ -123,6 +138,10 @@
             <p class="card-title">Annoying BA Popup</p>
             <p class="card-desc">Chrome/Firefox Extension that annoys you, I guess.</p>
             <span class="coming-soon">Coming Soon</span>
+            <span class="ext-icon">
+              <img src="images/chrome-icon.webp" alt="Chrome" class="ext-icon" border="0" />
+              <img src="images/firefox-icon.webp" alt="Firefox" class="ext-icon" border="0" />
+            </span>
           </div>
         </div>
 
